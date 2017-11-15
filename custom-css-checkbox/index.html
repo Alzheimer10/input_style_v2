@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Custom CSS Checkbox</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <label class="checkbox-styled" data_src="img/c_b.jp">
+    <input type="checkbox" name="input_a" value="input_a"/>
+    <!-- <span>TEXTO_A</span> -->
+    <img src="img/c_b_.jpg" class="grayscale">
+  </label>
+
+
+  <label class="checkbox-styled">
+    <input type="checkbox" name="input_b" value="input_b" />
+    <!-- <span class="sad">TEXTO_B</span> -->
+    <img src="img/c_a_.jpg" class="grayscale">
+  </label>
+
+
+  <label class="checkbox-styled">
+    <input type="checkbox" name="input_c" value="input_c" />
+    <!-- <span class="sad">TEXTO_B</span> -->
+    <img src="img/c_c_.jpg" class="grayscale">
+  </label>
+
+  <label class="checkbox-styled">
+    <input type="checkbox" name="input_d" value="input_d" />
+    <!-- <span class="sad">TEXTO_B</span> -->
+    <img src="img/c_d_.jpg" class="grayscale">
+  </label>
+
+
+  <style>
+    .checkbox-styled {
+      display: block;
+      margin: 40px 0 0 0;
+      float: left;
+    }
+
+    .checkbox-styled input[type="checkbox"] {
+      display: none;
+    }
+
+    label.checkbox-styled{
+      width: 150px;
+      height: 150px;
+      margin: 2px;
+      background: gray;
+      position: relative;
+    }
+    .grayscale{
+      -webkit-filter: grayscale(100%);
+      -moz-filter: grayscale(100%);
+      -ms-filter: grayscale(100%);
+      -o-filter: grayscale(100%);
+    }
+  </style>
+
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script>
+    $('input[type="checkbox"]').click(function(){ 
+        $('input[type="checkbox"]').prop("checked", false).siblings('img').addClass('grayscale');
+        $(this).prop("checked", true).siblings('img').removeClass('grayscale');
+    });
+  </script>
+
+</body>
+</html>
