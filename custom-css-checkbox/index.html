@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>Custom CSS Checkbox</title>
-  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -42,7 +41,7 @@
     }
 
     .checkbox-styled input[type="checkbox"] {
-      display: none;
+       display: none;
     }
 
     label.checkbox-styled{
@@ -62,10 +61,12 @@
 
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <script>
-    $('input[type="checkbox"]').click(function(){ 
-        $('input[type="checkbox"]').prop("checked", false).siblings('img').addClass('grayscale');
-        $(this).prop("checked", true).siblings('img').removeClass('grayscale');
-    });
+      $('input[type="checkbox"]').click(function(){ 
+        if( $(this).is(':checked') )
+            $(this).prop("checked", true).siblings('img').removeClass('grayscale');
+        else
+           $(this).prop("checked", false).siblings('img').addClass('grayscale');
+      });
   </script>
 
 </body>
